@@ -6,16 +6,20 @@
 /*   By: mcygan <mcygan@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:55:00 by mcygan            #+#    #+#             */
-/*   Updated: 2025/01/15 12:04:25 by mcygan           ###   ########.fr       */
+/*   Updated: 2025/01/16 20:08:23 by mcygan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <stdlib.h>
-#include <unistd.h>
+#include <stdio.h>
 #include <mlx.h>
-#include <math.h>
+#include "parse.h"
+#include "render.h"
+
+#define WIDTH	600	// window width
+#define HEIGHT	600	// window height
 
 typedef struct s_img
 {

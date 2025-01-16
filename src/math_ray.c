@@ -1,25 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   math_ray.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcygan <mcygan@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/15 11:05:52 by mcygan            #+#    #+#             */
-/*   Updated: 2025/01/16 20:06:21 by mcygan           ###   ########.fr       */
+/*   Created: 2025/01/16 18:44:09 by mcygan            #+#    #+#             */
+/*   Updated: 2025/01/16 20:06:54 by mcygan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/miniRT.h"
-
-int	main(void)
-{
-	void	*mlx;
-	void	*window;
-
-	mlx = mlx_init();
-	window = mlx_new_window(mlx, 600, 600, "miniRT");
-	(void)window;
-	mlx_loop(mlx);
-	return (0);
-}
+#include "../inc/render.h"

@@ -6,7 +6,7 @@
 #    By: mcygan <mcygan@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/15 10:35:04 by mcygan            #+#    #+#              #
-#    Updated: 2025/01/16 12:14:30 by mcygan           ###   ########.fr        #
+#    Updated: 2025/01/16 20:08:45 by mcygan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,8 @@ INC				=	-I/usr/include -Imlx
 LIB				=	-lm -Lmlx -lmlx -L/usr/lib/X11 -lX11 -lXext
 
 SRC_FILES 		=	main.c \
+					math_vector.c \
+					math_ray.c \
 					utils.c
 
 SRC_DIR			=	src/
