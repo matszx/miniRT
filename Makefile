@@ -6,7 +6,7 @@
 #    By: mcygan <mcygan@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/15 10:35:04 by mcygan            #+#    #+#              #
-#    Updated: 2025/01/15 10:40:56 by mcygan           ###   ########.fr        #
+#    Updated: 2025/01/16 12:14:30 by mcygan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,10 @@ NAME 			=	miniRT
 CC 				=	cc
 CFLAGS 			=	-Wall -Wextra -Werror -fsanitize=address #-O3 -ffast-math
 INC				=	-I/usr/include -Imlx
-MLX				=	-Lmlx -lmlx -L/usr/lib/X11 -lX11 -lXext
+LIB				=	-lm -Lmlx -lmlx -L/usr/lib/X11 -lX11 -lXext
 
-SRC_FILES 		=	main.c
+SRC_FILES 		=	main.c \
+					utils.c
 
 SRC_DIR			=	src/
 SRC				=	$(addprefix $(SRC_DIR), $(SRC_FILES))
@@ -25,7 +26,7 @@ OBJ_DIR			=	obj/
 OBJ				=	$(addprefix $(OBJ_DIR), $(SRC_FILES:.c=.o))
 
 $(OBJ_DIR)%.o	:	$(SRC_DIR)%.c
-					$(CC) $(CFLAGS) -c $< -o $@
+					$(CC) $(CFLAGS) $(INC) -c $< -o $@
 
 all				:	$(OBJ_DIR) $(NAME)
 
@@ -34,7 +35,7 @@ $(OBJ_DIR)		:
 
 $(NAME)			:	$(OBJ)
 					@make -C mlx
-					$(CC) $(CFLAGS) $(INC) $(OBJ) -o $(NAME) $(MLX)
+					$(CC) $(CFLAGS) $(INC) $(OBJ) -o $(NAME) $(LIB)
 
 clean			:
 					@make clean -C mlx

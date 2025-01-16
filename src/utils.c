@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcygan <mcygan@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/15 11:05:52 by mcygan            #+#    #+#             */
-/*   Updated: 2025/01/15 11:59:10 by mcygan           ###   ########.fr       */
+/*   Created: 2025/01/15 11:54:20 by mcygan            #+#    #+#             */
+/*   Updated: 2025/01/16 12:15:30 by mcygan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/miniRT.h"
 
-int	main(void)
+void	ft_pxl_put(t_img *img, int x, int y, int colour)
 {
-	void	*mlx;
-	void	*window;
+	char	*dst;
 
-	mlx = mlx_init();
-	window = mlx_new_window(mlx, 600, 600, "miniRT");
-	(void)window;
-	mlx_loop(mlx);
-	return (0);
+	dst = img->pxl_ptr + (x * img->bpp / 8) + (y * img->line_len);
+	*(unsigned int *)dst = colour;
 }

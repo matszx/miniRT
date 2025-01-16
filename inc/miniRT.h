@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   miniRT.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcygan <mcygan@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/15 11:05:52 by mcygan            #+#    #+#             */
-/*   Updated: 2025/01/15 11:59:10 by mcygan           ###   ########.fr       */
+/*   Created: 2025/01/15 11:55:00 by mcygan            #+#    #+#             */
+/*   Updated: 2025/01/15 12:04:25 by mcygan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/miniRT.h"
+#pragma once
 
-int	main(void)
+#include <stdlib.h>
+#include <unistd.h>
+#include <mlx.h>
+#include <math.h>
+
+typedef struct s_img
 {
-	void	*mlx;
-	void	*window;
+	void	*img_ptr;
+	char	*pxl_ptr;
+	int		bpp;
+	int		line_len;
+	int		endian;
+}	t_img;
 
-	mlx = mlx_init();
-	window = mlx_new_window(mlx, 600, 600, "miniRT");
-	(void)window;
-	mlx_loop(mlx);
-	return (0);
-}
+void	ft_pxl_put(t_img *img, int x, int y, int colour);
