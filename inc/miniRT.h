@@ -6,7 +6,7 @@
 /*   By: mcygan <mcygan@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:55:00 by mcygan            #+#    #+#             */
-/*   Updated: 2025/01/19 21:53:59 by mcygan           ###   ########.fr       */
+/*   Updated: 2025/01/19 22:38:15 by mcygan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,13 @@ typedef struct s_camera
 	double	viewport_height;
 	double	focal_length;
 
-	t_vec	center;
+	t_point	center;
 	t_vec	viewport_u;
 	t_vec	viewport_v;
 	t_vec	delta_u;
 	t_vec	delta_v;
-	t_vec	viewport_ulp;
-	t_vec	pixel_zero;
+	t_point	viewport_ulp;
+	t_point	pixel_zero;
 }	t_camera;
 
 // camera.c
