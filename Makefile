@@ -6,7 +6,7 @@
 #    By: mcygan <mcygan@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/15 10:35:04 by mcygan            #+#    #+#              #
-#    Updated: 2025/01/19 15:31:46 by mcygan           ###   ########.fr        #
+#    Updated: 2025/01/19 15:41:58 by mcygan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME 			=	miniRT
 CC 				=	cc
 CFLAGS 			=	-Wall -Wextra -Werror -fsanitize=address #-O3 -ffast-math
 INC				=	-I/usr/include -Imlx
-LIB				=	-lm -Lmlx -lmlx -L/usr/lib/X11 -lX11 -lXext
+LIB				=	-Lmlx -lmlx -L/usr/lib/X11 -lX11 -lXext -lm
 
 SRC_FILES 		=	main.c \
 					camera.c \

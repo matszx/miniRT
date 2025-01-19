@@ -6,7 +6,7 @@
 /*   By: mcygan <mcygan@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 10:45:25 by mcygan            #+#    #+#             */
-/*   Updated: 2025/01/19 15:31:26 by mcygan           ###   ########.fr       */
+/*   Updated: 2025/01/19 15:43:40 by mcygan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ t_vec	ray_colour(t_ray r)
 	return (res);
 }
 
-t_camera*	camera_init(t_camera *c)
+void	camera_init(t_camera *c)
 {
 	c->window_height = HEIGHT;
 	c->window_width = WIDTH;
@@ -46,5 +46,4 @@ t_camera*	camera_init(t_camera *c)
 	c->delta_u = v_divd(c->viewport_u, c->window_width);
 	c->viewport_ulp = v_diff(v_diff(v_diff(c->center, v_divd(c->viewport_v, 2)), v_divd(c->viewport_u, 2)), vec(0.0, 0.0, c->focal_length));
 	c->pixel_zero = v_sum(c->viewport_ulp, v_muld(v_sum(c->delta_v, c->delta_u), 0.5));
-	return (c);
 }

@@ -6,7 +6,7 @@
 /*   By: mcygan <mcygan@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:55:00 by mcygan            #+#    #+#             */
-/*   Updated: 2025/01/19 15:30:24 by mcygan           ###   ########.fr       */
+/*   Updated: 2025/01/19 15:43:49 by mcygan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,4 +80,4 @@ t_ray		ray(t_point origin, t_vec dir);
 
 int			vec_to_colour(t_vec v);
 t_vec		ray_colour(t_ray r);
-t_camera*	camera_init(t_camera *c);
+void		camera_init(t_camera *c);
