@@ -1,32 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   render.h                                           :+:      :+:    :+:   */
+/*   vector_math3.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcygan <mcygan@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/16 18:22:26 by mcygan            #+#    #+#             */
-/*   Updated: 2025/01/16 18:39:49 by mcygan           ###   ########.fr       */
+/*   Created: 2025/01/17 13:12:56 by mcygan            #+#    #+#             */
+/*   Updated: 2025/01/19 15:13:50 by mcygan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "../inc/miniRT.h"
 
-#include <math.h>
-
-typedef struct s_vec3
+t_vec	vec(double x, double y, double z)
 {
-	double	e[3];
-}	t_vec3;
+	t_vec	v;
 
-typedef struct s_ray
+	v.x = x;
+	v.y = y;
+	v.z = z;
+	return (v);
+}
+
+double	v_dot(t_vec v1, t_vec v2)
 {
-	double	origin[3];
-	t_vec3	dir;
-}	t_ray;
+	return (v1.x * v2.x + v1.y * v2.y + v1.z * v2.z);
+}
 
-t_vec3	v_init(double *x, double *y, double *z);
-t_vec3	v_sum(t_vec3 *v1, t_vec3 *v2);
-t_vec3	v_mul(t_vec3 *v1, t_vec3 *v2);
-double	v_dot(t_vec3 *v1, t_vec3 *v2);
-double	v_len(t_vec3 *v);
+double	v_len(t_vec v)
+{
+	return (sqrt(v.x * v.x + v.y * v.y + v.z * v.z));
+}
+
+t_ray	ray(t_vec origin, t_vec dir)
+{
+	t_ray	r;
+
+	r.origin = origin;
+	r.dir = dir;
+	return (r);
+}
