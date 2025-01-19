@@ -6,7 +6,7 @@
 #    By: mcygan <mcygan@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/15 10:35:04 by mcygan            #+#    #+#              #
-#    Updated: 2025/01/19 18:22:04 by mcygan           ###   ########.fr        #
+#    Updated: 2025/01/19 21:45:49 by mcygan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,7 @@ LIB				=	-Lmlx -lmlx -L/usr/lib/X11 -lX11 -lXext -lm
 
 SRC_FILES 		=	main.c \
 					camera.c \
-					vector_math.c \
-					utils.c
+					vector_math.c
 
 SRC_DIR			=	src/
 SRC				=	$(addprefix $(SRC_DIR), $(SRC_FILES))

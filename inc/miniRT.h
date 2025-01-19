@@ -6,7 +6,7 @@
 /*   By: mcygan <mcygan@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:55:00 by mcygan            #+#    #+#             */
-/*   Updated: 2025/01/19 18:58:29 by mcygan           ###   ########.fr       */
+/*   Updated: 2025/01/19 21:53:59 by mcygan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,15 @@
 #define WIDTH	800
 #define HEIGHT	600
 
-typedef struct s_img
-{
-	void	*img_ptr;
-	char	*pxl_ptr;
-	int		bpp;
-	int		line_len;
-	int		endian;
-}	t_img;
-
 typedef struct s_vec
 {
 	double	x;
 	double	y;
 	double	z;
-}	t_vec, t_point, t_col;
+}	t_vec;
+
+typedef t_vec	t_point;
+typedef t_vec	t_colour;
 
 typedef struct s_ray
 {
@@ -44,8 +38,6 @@ typedef struct s_ray
 
 typedef struct s_camera
 {
-	t_img	img;
-
 	double	window_width;
 	double	window_height;
 	double	aspect_ratio;
