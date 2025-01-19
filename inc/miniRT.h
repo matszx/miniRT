@@ -6,19 +6,19 @@
 /*   By: mcygan <mcygan@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:55:00 by mcygan            #+#    #+#             */
-/*   Updated: 2025/01/19 15:43:49 by mcygan           ###   ########.fr       */
+/*   Updated: 2025/01/19 18:58:29 by mcygan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <mlx.h>
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include <mlx.h>
 #include <math.h>
 
-#define HEIGHT	600
 #define WIDTH	800
+#define HEIGHT	600
 
 typedef struct s_img
 {
@@ -34,7 +34,7 @@ typedef struct s_vec
 	double	x;
 	double	y;
 	double	z;
-}	t_vec, t_point;
+}	t_vec, t_point, t_col;
 
 typedef struct s_ray
 {
@@ -63,21 +63,21 @@ typedef struct s_camera
 	t_vec	pixel_zero;
 }	t_camera;
 
-t_vec		vec(double x, double y, double z);
-t_vec		v_diff(t_vec v1, t_vec v2);
-t_vec		v_sum(t_vec v1, t_vec v2);
-t_vec		v_div(t_vec v1, t_vec v2);
-t_vec		v_mul(t_vec v1, t_vec v2);
-
-t_vec		v_diffd(t_vec v1, double n);
-t_vec		v_sumd(t_vec v1, double n);
-t_vec		v_divd(t_vec v1, double n);
-t_vec		v_muld(t_vec v1, double n);
-
-double		v_dot(t_vec v1, t_vec v2);
-double		v_len(t_vec v);
-t_ray		ray(t_point origin, t_vec dir);
-
+// camera.c
 int			vec_to_colour(t_vec v);
 t_vec		ray_colour(t_ray r);
 void		camera_init(t_camera *c);
+
+// vector_math.c
+t_vec		vec(double x, double y, double z);
+t_ray		ray(t_point origin, t_vec dir);
+t_vec		sub_n(t_vec v, double n);
+t_vec		sum_n(t_vec v, double n);
+t_vec		div_n(t_vec v, double n);
+t_vec		mul_n(t_vec v, double n);
+t_vec		sub_v(t_vec v1, t_vec v2);
+t_vec		sum_v(t_vec v1, t_vec v2);
+t_vec		div_v(t_vec v1, t_vec v2);
+t_vec		mul_v(t_vec v1, t_vec v2);
+double		scalar(t_vec v1, t_vec v2);
+double		len_v(t_vec v);
