@@ -6,7 +6,7 @@
 /*   By: mcygan <mcygan@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 10:45:25 by mcygan            #+#    #+#             */
-/*   Updated: 2025/01/19 18:57:53 by mcygan           ###   ########.fr       */
+/*   Updated: 2025/01/19 19:29:41 by mcygan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	vec_to_colour(t_vec v)
 {
-	return ((int)v.x << 16 | (int)v.y << 8 | (int)v.z);
+	return ((int)(v.x * 255.0) << 16 | (int)(v.y * 255.0) << 8 | (int)(v.z * 255.0));
 }
 
 t_vec	ray_colour(t_ray r)
@@ -22,7 +22,7 @@ t_vec	ray_colour(t_ray r)
 	double	a;
 
 	a = (div_n(r.dir, len_v(r.dir)).y + 1.0) * 0.5;
-	return (sum_v(mul_n(vec(255.0, 255.0, 255.0), 1.0 - a), mul_n(vec(127.5, 178.5, 255.0), a)));
+	return (sum_v(mul_n(vec(1.0, 1.0, 1.0), 1.0 - a), mul_n(vec(0.5, 0.7, 1.0), a)));
 }
 
 void	camera_init(t_camera *c)
