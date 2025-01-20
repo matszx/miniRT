@@ -6,7 +6,7 @@
 /*   By: mcygan <mcygan@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:55:00 by mcygan            #+#    #+#             */
-/*   Updated: 2025/01/20 11:26:16 by mcygan           ###   ########.fr       */
+/*   Updated: 2025/01/20 15:07:37 by mcygan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ t_vec		div_v(t_vec v1, t_vec v2);
 t_vec		mul_v(t_vec v1, t_vec v2);
 double		scalar(t_vec v1, t_vec v2);
 double		len_v(t_vec v);
+double		len_v_squared(t_vec v);
 t_vec		unit_v(t_vec v);
 t_ray		ray(t_point origin, t_vec dir);
 t_point		at(t_ray r, double t);

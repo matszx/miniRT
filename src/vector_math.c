@@ -6,7 +6,7 @@
 /*   By: mcygan <mcygan@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 17:33:11 by mcygan            #+#    #+#             */
-/*   Updated: 2025/01/20 11:26:00 by mcygan           ###   ########.fr       */
+/*   Updated: 2025/01/20 15:07:18 by mcygan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,11 @@ double	scalar(t_vec v1, t_vec v2)
 double	len_v(t_vec v)
 {
 	return (sqrt(v.x * v.x + v.y * v.y + v.z * v.z));
+}
+
+double	len_v_squared(t_vec v)
+{
+	return (v.x * v.x + v.y * v.y + v.z * v.z);
 }
 
 t_vec	unit_v(t_vec v)
