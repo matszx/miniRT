@@ -6,13 +6,14 @@
 /*   By: mcygan <mcygan@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:55:00 by mcygan            #+#    #+#             */
-/*   Updated: 2025/01/20 10:44:15 by mcygan           ###   ########.fr       */
+/*   Updated: 2025/01/20 11:01:22 by mcygan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <stdlib.h>
+//#include <stdlib.h>
+#include <stdbool.h>
 #include <stdio.h>
 #include <mlx.h>
 #include <math.h>
@@ -56,9 +57,12 @@ typedef struct s_camera
 }	t_camera;
 
 // camera.c
-int			vec_to_colour(t_vec v);
-t_colour	ray_colour(t_ray r);
 void		camera_init(t_camera *c);
+t_colour	ray_colour(t_ray r);
+int			vec_to_colour(t_vec v);
+
+// raytracing.h
+bool		sphere_hit(t_ray ray, t_point center, double r);
 
 // vector_math.c
 t_vec		vec(double x, double y, double z);
