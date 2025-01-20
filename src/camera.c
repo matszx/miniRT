@@ -6,7 +6,7 @@
 /*   By: mcygan <mcygan@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 10:45:25 by mcygan            #+#    #+#             */
-/*   Updated: 2025/01/20 11:03:04 by mcygan           ###   ########.fr       */
+/*   Updated: 2025/01/20 11:29:30 by mcygan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,16 @@ void	camera_init(t_camera *c)
 
 t_colour	ray_colour(t_ray r)
 {
+	double	t;
+	t_vec	n;
 	double	a;
 
-	if (sphere_hit(r, vec(0, 0, -1), 0.5))
-		return (vec(1, 0, 0));
+	t = sphere_hit(r, vec(0, 0, -1), 0.5);
+	if (t > 0.0)
+	{
+		n = unit_v(sub_v(at(r, t), vec(0, 0, -1)));
+		return (mul_n(vec(n.x + 1, n.y + 1, n.z + 1), 0.5));
+	}
 	a = (div_n(r.dir, len_v(r.dir)).y + 1.0) * 0.5;
 	return (sum_v(mul_n(vec(1.0, 1.0, 1.0), 1.0 - a), mul_n(vec(0.5, 0.7, 1.0), a)));
 }

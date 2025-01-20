@@ -6,7 +6,7 @@
 /*   By: mcygan <mcygan@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:55:00 by mcygan            #+#    #+#             */
-/*   Updated: 2025/01/20 11:01:22 by mcygan           ###   ########.fr       */
+/*   Updated: 2025/01/20 11:26:16 by mcygan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,10 @@ t_colour	ray_colour(t_ray r);
 int			vec_to_colour(t_vec v);
 
 // raytracing.h
-bool		sphere_hit(t_ray ray, t_point center, double r);
+double		sphere_hit(t_ray ray, t_point center, double r);
 
 // vector_math.c
 t_vec		vec(double x, double y, double z);
-t_ray		ray(t_point origin, t_vec dir);
 t_vec		sub_n(t_vec v, double n);
 t_vec		sum_n(t_vec v, double n);
 t_vec		div_n(t_vec v, double n);
@@ -77,3 +76,6 @@ t_vec		div_v(t_vec v1, t_vec v2);
 t_vec		mul_v(t_vec v1, t_vec v2);
 double		scalar(t_vec v1, t_vec v2);
 double		len_v(t_vec v);
+t_vec		unit_v(t_vec v);
+t_ray		ray(t_point origin, t_vec dir);
+t_point		at(t_ray r, double t);

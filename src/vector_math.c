@@ -6,7 +6,7 @@
 /*   By: mcygan <mcygan@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 17:33:11 by mcygan            #+#    #+#             */
-/*   Updated: 2025/01/19 18:21:50 by mcygan           ###   ########.fr       */
+/*   Updated: 2025/01/20 11:26:00 by mcygan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,6 @@ t_vec	vec(double x, double y, double z)
 	v.y = y;
 	v.z = z;
 	return (v);
-}
-
-t_ray	ray(t_vec origin, t_vec dir)
-{
-	t_ray	r;
-
-	r.origin = origin;
-	r.dir = dir;
-	return (r);
 }
 
 t_vec	sub_n(t_vec v, double n)
@@ -79,4 +70,23 @@ double	scalar(t_vec v1, t_vec v2)
 double	len_v(t_vec v)
 {
 	return (sqrt(v.x * v.x + v.y * v.y + v.z * v.z));
+}
+
+t_vec	unit_v(t_vec v)
+{
+	return (div_n(v, len_v(v)));
+}
+
+t_ray	ray(t_vec origin, t_vec dir)
+{
+	t_ray	r;
+
+	r.origin = origin;
+	r.dir = dir;
+	return (r);
+}
+
+t_point	at(t_ray r, double t)
+{
+	return (sum_v(r.origin, mul_n(r.dir, t)));
 }

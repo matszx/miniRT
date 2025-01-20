@@ -6,7 +6,7 @@
 /*   By: mcygan <mcygan@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:05:52 by mcygan            #+#    #+#             */
-/*   Updated: 2025/01/19 21:54:02 by mcygan           ###   ########.fr       */
+/*   Updated: 2025/01/20 11:30:28 by mcygan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	render_scene(void *mlx, void *win, t_camera *c)
 	int			j;
 	t_point		p_center;
 	t_vec		ray_dir;
-	t_colour		p_col;
+	t_colour	p_col;
 
 	i = -1;
 	while (++i < HEIGHT)
