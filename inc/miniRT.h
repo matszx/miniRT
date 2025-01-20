@@ -6,7 +6,7 @@
 /*   By: mcygan <mcygan@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 11:55:00 by mcygan            #+#    #+#             */
-/*   Updated: 2025/01/19 22:38:15 by mcygan           ###   ########.fr       */
+/*   Updated: 2025/01/20 10:44:15 by mcygan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ typedef struct s_camera
 
 // camera.c
 int			vec_to_colour(t_vec v);
-t_vec		ray_colour(t_ray r);
+t_colour	ray_colour(t_ray r);
 void		camera_init(t_camera *c);
 
 // vector_math.c

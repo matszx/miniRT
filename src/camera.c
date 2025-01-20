@@ -6,7 +6,7 @@
 /*   By: mcygan <mcygan@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/17 10:45:25 by mcygan            #+#    #+#             */
-/*   Updated: 2025/01/19 19:29:41 by mcygan           ###   ########.fr       */
+/*   Updated: 2025/01/20 10:44:04 by mcygan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	vec_to_colour(t_vec v)
 	return ((int)(v.x * 255.0) << 16 | (int)(v.y * 255.0) << 8 | (int)(v.z * 255.0));
 }
 
-t_vec	ray_colour(t_ray r)
+t_colour	ray_colour(t_ray r)
 {
 	double	a;
 
