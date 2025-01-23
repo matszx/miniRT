@@ -6,7 +6,7 @@
 /*   By: mcygan <mcygan@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 10:50:54 by mcygan            #+#    #+#             */
-/*   Updated: 2025/01/20 15:09:54 by mcygan           ###   ########.fr       */
+/*   Updated: 2025/01/23 10:39:42 by mcygan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ double	sphere_hit(t_ray ray, t_point center, double r)
 
 	oc = sub_v(center, ray.origin);
 	a = len_v_squared(ray.dir);
-	h = scalar(ray.dir, oc);
+	h = dot(ray.dir, oc);
 	c = len_v_squared(oc) - r * r;
 	discriminant = h * h - a * c;
 	if (discriminant < 0)

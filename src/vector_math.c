@@ -6,7 +6,7 @@
 /*   By: mcygan <mcygan@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 17:33:11 by mcygan            #+#    #+#             */
-/*   Updated: 2025/01/20 15:07:18 by mcygan           ###   ########.fr       */
+/*   Updated: 2025/01/23 10:39:42 by mcygan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ t_vec	mul_v(t_vec v1, t_vec v2)
 	return (vec(v1.x * v2.x, v1.y * v2.y, v1.z * v2.z));
 }
 
-double	scalar(t_vec v1, t_vec v2)
+double	dot(t_vec v1, t_vec v2)
 {
 	return (v1.x * v2.x + v1.y * v2.y + v1.z * v2.z);
 }
