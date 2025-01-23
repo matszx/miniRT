@@ -6,7 +6,7 @@
 /*   By: mcygan <mcygan@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 17:33:11 by mcygan            #+#    #+#             */
-/*   Updated: 2025/01/23 10:39:42 by mcygan           ###   ########.fr       */
+/*   Updated: 2025/01/23 10:53:24 by mcygan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ t_ray	ray(t_vec origin, t_vec dir)
 	return (r);
 }
 
-t_point	at(t_ray r, double t)
+t_point	dst(t_ray r, double t)
 {
 	return (sum_v(r.origin, mul_n(r.dir, t)));
 }
